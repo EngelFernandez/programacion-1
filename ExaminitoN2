@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+using namespace std;
+
+void contador(string frase);
+
+void main()
+{	string frase;
+	cout<<"Escriba una frase"<<endl;
+	getline(cin,frase);
+	contador(frase);
+
+	getch();
+}
+void contador(string frase)
+{
+	int tam=frase.length(),voc=0,esp=0,pal,con;
+	for(int i=0;i<tam;i++)
+	{
+		if(frase[i]=='a' || frase[i]=='e' || frase[i]=='i' || frase[i]=='o' || frase[i]=='u')
+			voc++;
+		if(frase[i]==' ')
+			esp++;
+		pal=esp+1;
+		con=tam-voc-esp;
+	}
+	cout<<"palabras: "<<pal<<endl;
+	cout<<"vocales: "<<voc<<endl;
+	cout<<"consonantes: "<<con<<endl;
+}
